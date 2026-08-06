@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;box-sizing:border-box;}
+  *{box-sizing:border-box;}
+  a{color:inherit;text-decoration:none;}
+</style>
+</helmet>
+<div style="position:sticky;top:0;left:0;right:0;z-index:100;background:#FFFFFF;border-bottom:1px solid #E4E9F1;font-family:'Public Sans',sans-serif;">
+  <div style="max-width:1360px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:{{ navPadding }};height:{{ navHeight }};">
+    <a href="Home.dc.html" style="display:flex;align-items:center;gap:10px;">
+      <img src="assets/logo-icon.png" alt="Enterprise Solutions" style="width:40px;height:40px;object-fit:contain;flex-shrink:0;"/>
+      <div style="display:flex;flex-direction:column;line-height:1.1;">
+        <span style="font-family:'Manrope',sans-serif;font-weight:800;font-size:15px;color:#0B1F3A;letter-spacing:0.2px;">Enterprise Solutions</span>
+        <span style="font-family:'Public Sans',sans-serif;font-weight:500;font-size:10px;color:#5B6B85;letter-spacing:1.2px;">MANAGEMENT CONSULTING</span>
+      </div>
+    </a>
+
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;align-items:center;gap:40px;">
+        <a href="Home.dc.html" style="font-size:14.5px;font-weight:600;color:{{ colorHome }};padding:8px 0;border-bottom:2px solid {{ underlineHome }};">Home</a>
+        <a href="About.dc.html" style="font-size:14.5px;font-weight:600;color:{{ colorAbout }};padding:8px 0;border-bottom:2px solid {{ underlineAbout }};">About</a>
+
+        <div style="position:relative;" onMouseEnter="{{ openServices }}" onMouseLeave="{{ closeServices }}">
+          <a href="Services.dc.html" style="font-size:14.5px;font-weight:600;color:{{ colorServices }};padding:8px 0;border-bottom:2px solid {{ underlineServices }};display:flex;align-items:center;gap:5px;">
+            Services
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <sc-if value="{{ servicesOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;top:100%;left:-20px;padding-top:16px;">
+              <div style="background:#FFFFFF;border:1px solid #E4E9F1;box-shadow:0 20px 40px rgba(11,31,58,0.12);width:300px;padding:10px;">
+                <a href="Services.dc.html#pmc" style="display:block;padding:12px 14px;font-size:13.5px;font-weight:600;color:#0B1F3A;">Project Management Consulting</a>
+                <a href="Services.dc.html#qic" style="display:block;padding:12px 14px;font-size:13.5px;font-weight:600;color:#0B1F3A;">Quality Improvement Consulting</a>
+                <a href="Services.dc.html#cdc" style="display:block;padding:12px 14px;font-size:13.5px;font-weight:600;color:#0B1F3A;">Construction Disputes &amp; Claims</a>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+
+        <a href="Industries.dc.html" style="font-size:14.5px;font-weight:600;color:{{ colorIndustries }};padding:8px 0;border-bottom:2px solid {{ underlineIndustries }};">Industries</a>
+        <a href="Projects.dc.html" style="font-size:14.5px;font-weight:600;color:{{ colorProjects }};padding:8px 0;border-bottom:2px solid {{ underlineProjects }};">Projects</a>
+        <a href="Insights.dc.html" style="font-size:14.5px;font-weight:600;color:{{ colorInsights }};padding:8px 0;border-bottom:2px solid {{ underlineInsights }};">Insights</a>
+        <a href="Careers.dc.html" style="font-size:14.5px;font-weight:600;color:{{ colorCareers }};padding:8px 0;border-bottom:2px solid {{ underlineCareers }};">Careers</a>
+      </div>
+      <a href="Contact.dc.html" style="background:#0B1F3A;color:#FFFFFF;font-size:14px;font-weight:700;padding:12px 26px;">Contact Us</a>
+    </sc-if>
+
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ toggleMobile }}" aria-label="Menu" style="background:none;border:none;padding:6px;cursor:pointer;">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M3 7H23M3 13H23M3 19H23" stroke="#0B1F3A" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="background:#FFFFFF;border-top:1px solid #E4E9F1;padding:8px 24px 28px;display:flex;flex-direction:column;">
+      <a href="Home.dc.html" style="font-size:16px;font-weight:700;color:#0B1F3A;padding:14px 0;border-bottom:1px solid #EEF1F6;">Home</a>
+      <a href="About.dc.html" style="font-size:16px;font-weight:700;color:#0B1F3A;padding:14px 0;border-bottom:1px solid #EEF1F6;">About</a>
+      <a href="Services.dc.html" style="font-size:16px;font-weight:700;color:#0B1F3A;padding:14px 0;border-bottom:1px solid #EEF1F6;">Services</a>
+      <a href="Industries.dc.html" style="font-size:16px;font-weight:700;color:#0B1F3A;padding:14px 0;border-bottom:1px solid #EEF1F6;">Industries</a>
+      <a href="Projects.dc.html" style="font-size:16px;font-weight:700;color:#0B1F3A;padding:14px 0;border-bottom:1px solid #EEF1F6;">Projects</a>
+      <a href="Insights.dc.html" style="font-size:16px;font-weight:700;color:#0B1F3A;padding:14px 0;border-bottom:1px solid #EEF1F6;">Insights</a>
+      <a href="Careers.dc.html" style="font-size:16px;font-weight:700;color:#0B1F3A;padding:14px 0;border-bottom:1px solid #EEF1F6;">Careers</a>
+      <a href="Contact.dc.html" style="margin-top:16px;background:#0B1F3A;color:#FFFFFF;font-size:15px;font-weight:700;padding:14px;text-align:center;">Contact Us</a>
+    </div>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1360,&quot;height&quot;:88},&quot;activePage&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;about&quot;,&quot;services&quot;,&quot;industries&quot;,&quot;projects&quot;,&quot;insights&quot;,&quot;careers&quot;,&quot;contact&quot;]}}">
+class Component extends DCLogic {
+  state = { isDesktop: true, mobileOpen: false, servicesOpen: false };
+
+  componentDidMount() {
+    this.check = () => this.setState({ isDesktop: window.innerWidth >= 1080, mobileOpen: false });
+    this.check();
+    window.addEventListener('resize', this.check);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.check);
+  }
+
+  renderVals() {
+    const active = this.props.activePage || 'home';
+    const navy = '#0B1F3A';
+    const muted = '#3A4A63';
+    const color = (key) => active === key ? navy : muted;
+    const underline = (key) => active === key ? '#2563EB' : 'transparent';
+    return {
+      isDesktop: this.state.isDesktop,
+      isMobile: !this.state.isDesktop,
+      mobileOpen: this.state.mobileOpen,
+      servicesOpen: this.state.servicesOpen,
+      navPadding: this.state.isDesktop ? '0 48px' : '0 20px',
+      navHeight: this.state.isDesktop ? '88px' : '72px',
+      toggleMobile: () => this.setState(s => ({ mobileOpen: !s.mobileOpen })),
+      openServices: () => this.setState({ servicesOpen: true }),
+      closeServices: () => this.setState({ servicesOpen: false }),
+      colorHome: color('home'), underlineHome: underline('home'),
+      colorAbout: color('about'), underlineAbout: underline('about'),
+      colorServices: color('services'), underlineServices: underline('services'),
+      colorIndustries: color('industries'), underlineIndustries: underline('industries'),
+      colorProjects: color('projects'), underlineProjects: underline('projects'),
+      colorInsights: color('insights'), underlineInsights: underline('insights'),
+      colorCareers: color('careers'), underlineCareers: underline('careers'),
+    };
+  }
+}
+
+</script>
+</body>
+</html>

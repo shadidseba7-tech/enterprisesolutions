@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>a{color:inherit;text-decoration:none;} input::placeholder{color:#8996AC;}</style>
+</helmet>
+<footer style="background:#0B1F3A;font-family:'Public Sans',sans-serif;color:#C7D0DE;">
+  <div style="max-width:1360px;margin:0 auto;padding:72px 48px 40px;display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:48px;">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+        <img src="assets/logo-icon.png" alt="Enterprise Solutions" style="width:34px;height:34px;object-fit:contain;background:#FFFFFF;padding:2px;"/>
+        <span style="font-family:'Manrope',sans-serif;font-weight:800;font-size:16px;color:#FFFFFF;">Enterprise Solutions</span>
+      </div>
+      <p style="font-size:14px;line-height:1.7;color:#9AA8C0;max-width:320px;margin:0 0 22px;">Premium management consulting in project management, quality improvement, and construction disputes &amp; claims — serving Saudi Arabia, the GCC, and international markets.</p>
+      <div style="display:flex;gap:12px;">
+        <a href="#" aria-label="LinkedIn" style="width:36px;height:36px;border:1px solid #2A3B58;display:flex;align-items:center;justify-content:center;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.24 8.5h4.5V23H.24V8.5zM8.5 8.5h4.32v1.98h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9V23h-4.5v-6.98c0-1.66-.03-3.8-2.32-3.8-2.32 0-2.68 1.8-2.68 3.68V23H8.5V8.5z" fill="#C7D0DE"/></svg>
+        </a>
+        <a href="#" aria-label="X" style="width:36px;height:36px;border:1px solid #2A3B58;display:flex;align-items:center;justify-content:center;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M18.9 1.5h3.7l-8.1 9.3L24 22.5h-7.5l-5.9-7.7-6.7 7.7H0.2l8.7-10L0 1.5h7.7l5.3 7 5.9-7zM17.6 20.3h2l-13-15.9H4.4l13.2 15.9z" fill="#C7D0DE"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" style="width:36px;height:36px;border:1px solid #2A3B58;display:flex;align-items:center;justify-content:center;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="1" y="1" width="22" height="22" rx="5" stroke="#C7D0DE" stroke-width="1.6"/><circle cx="12" cy="12" r="5" stroke="#C7D0DE" stroke-width="1.6"/><circle cx="18" cy="6" r="1.2" fill="#C7D0DE"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'Manrope',sans-serif;font-weight:700;font-size:13px;color:#FFFFFF;letter-spacing:0.6px;margin-bottom:20px;">COMPANY</div>
+      <div style="display:flex;flex-direction:column;gap:14px;font-size:14px;">
+        <a href="About.dc.html">About Us</a>
+        <a href="Industries.dc.html">Industries</a>
+        <a href="Projects.dc.html">Projects &amp; Case Studies</a>
+        <a href="Insights.dc.html">Insights &amp; News</a>
+        <a href="Careers.dc.html">Careers</a>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'Manrope',sans-serif;font-weight:700;font-size:13px;color:#FFFFFF;letter-spacing:0.6px;margin-bottom:20px;">SERVICES</div>
+      <div style="display:flex;flex-direction:column;gap:14px;font-size:14px;">
+        <a href="Services.dc.html#pmc">Project Management Consulting</a>
+        <a href="Services.dc.html#qic">Quality Improvement Consulting</a>
+        <a href="Services.dc.html#cdc">Construction Disputes &amp; Claims</a>
+        <a href="Contact.dc.html">Contact Us</a>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'Manrope',sans-serif;font-weight:700;font-size:13px;color:#FFFFFF;letter-spacing:0.6px;margin-bottom:20px;">STAY UPDATED</div>
+      <p style="font-size:13.5px;color:#9AA8C0;margin:0 0 14px;">Insights on project delivery, quality, and dispute resolution — in your inbox.</p>
+      <sc-if value="{{ subscribed }}" hint-placeholder-val="{{ false }}">
+        <div style="font-size:13.5px;color:#39D98A;font-weight:600;">Thank you — you're subscribed.</div>
+      </sc-if>
+      <sc-if value="{{ notSubscribed }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ handleSubscribe }}" style="display:flex;gap:0;border:1px solid #2A3B58;">
+          <input type="email" required="true" placeholder="Work email" value="{{ email }}" onChange="{{ handleEmailChange }}" style="flex:1;min-width:0;background:transparent;border:none;padding:12px 14px;color:#FFFFFF;font-size:13.5px;outline:none;"/>
+          <button type="submit" style="background:#2563EB;border:none;color:#FFFFFF;padding:0 16px;font-size:13px;font-weight:700;cursor:pointer;">Join</button>
+        </form>
+      </sc-if>
+      <div style="margin-top:26px;font-size:13.5px;color:#9AA8C0;line-height:1.8;">
+        <div>Khobar, Eastern Province, Saudi Arabia</div>
+        <div>+966 50 521 5811</div>
+        <div>shadidhm@enterprise-company.com</div>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid #1E2E4A;">
+    <div style="max-width:1360px;margin:0 auto;padding:22px 48px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;color:#7C8AA5;">
+      <div>© 2026 Enterprise Solutions. All rights reserved.</div>
+      <div style="display:flex;gap:24px;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1360,&quot;height&quot;:420}}">
+class Component extends DCLogic {
+  state = { email: '', subscribed: false };
+  renderVals() {
+    return {
+      email: this.state.email,
+      subscribed: this.state.subscribed,
+      notSubscribed: !this.state.subscribed,
+      handleEmailChange: (e) => this.setState({ email: e.target.value }),
+      handleSubscribe: (e) => { e.preventDefault(); if (this.state.email) this.setState({ subscribed: true }); },
+    };
+  }
+}
+
+</script>
+</body>
+</html>
