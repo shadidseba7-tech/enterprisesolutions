@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.enterprise-company.com/sitemap.xml
